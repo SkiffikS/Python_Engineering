@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>Теплотехнічні характеристики будівлі</title>
+
+    <script src = "eel.js"></script>
+    <script src = "script.js"></script>
+    <link rel = "icon" type = "image/png" href = "/faveicon.png">
+    <link rel = "stylesheet" href = "/style.css">
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <div class = "container">
+        <h1 class = "title">Теплотехнічні характеристики будівлі <br> потреба у тепловій енергії на опалення <br> ГВП та вентилювання (Вкладка 3)</h1>
+        <h3 class = "inputs-title">Задаємо температуру води при прийомі:</h3>
+        <div class = "inputs">
+            <div class = "var-1">
+                <div class = "input-block">
+                    <input class = "input" type = "text" id = "input-1" required>
+                    <label for = "">душу</label>
+                </div>
+            </div>
+            <div class = "var-2">
+                <div class = "input-block">
+                    <input class = "input" type="text" id = "input-2" required>
+                    <label for = "">ванни</label>
+                </div>
+            </div>
+        </div>
+        <div class = "button-result">
+            <button onclick = "get_info()"> Розрахувати </button>
+        </div>
+        <div class = "end-program" id = "end-program">
+            <div class = "result-text" id = "result-text"></div>
+            <div class = "button-graph">
+                <h3 class = "subtitle">характеристику потреб будівлі у тепловій енергії <br> на опалення для всього діапазону температур</h3>
+                <div class = "button-result"><button class = "get-graph" onclick = "get_graph()"> Показати графік </button></div>
+                <div class = "result-graph" id = "result-graph">
+                    <div class="graph">
+                        <img src = "img/task_3-4_plot.png" alt = "Виникла помилка із шляхом до картинки або неправильно введені данні ;(">
+                    </div>
+                </div>
+            </div>
+            <div class = "button-diagram">
+                <h3 class = "subtitle"> вартість опалення та ГВП будівлі </h3>
+                <div class = "button-result"><button class = "get-diagram" onclick="get_diagram()"> Показати діаграмму </button></div>
+                <div class = "result-diagram" id = "result-diagram">
+                    <div class = "graph">
+                        <img src = "img/task_3-7_plot.png" alt = "Виникла помилка із шляхом до картинки або неправильно введені данні ;(">
+                        <div class = "hint-text">
+                            <ol>
+                                Способи опалення за методичкою:
+                                <li> Теплозабезпечення від централізованої мережі;</li>
+                                <li> Автономного теплозабезпечення від газового котла;</li>
+                                <li> Автономного теплозабезпечення від вугільного котла;</li>
+                                <li> Автономного теплозабезпечення від дров’яного котла;</li>
+                                <li> Автономного теплозабезпечення від котла, що працює на деревних пелетах;</li>
+                                <li> Автономного теплозабезпечення від електричного котла.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        async function get_info(){
+            let T1 = document.getElementById("input-1").value
+            let T2 = document.getElementById("input-2").value
+
+            let res = await eel.main(T1, T2)();
+            document.getElementById("result-text").innerHTML = res;
+            document.getElementById("end-program").style.display = "block";
+        }
+
+    </script>
+</body>
+</html>

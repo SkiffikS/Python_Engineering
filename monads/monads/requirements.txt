@@ -1,0 +1,7 @@
+commonmark==0.9.1
+expression==4.1.0
+numpy==1.23.4
+Pygments==2.13.0
+rich==12.6.0
+thespian==3.10.6
+typing_extensions==4.4.0

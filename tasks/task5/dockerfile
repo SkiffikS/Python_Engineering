@@ -1,0 +1,16 @@
+FROM python:3
+
+WORKDIR /python
+
+EXPOSE 8001
+
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+RUN pip install ipython
+#RUN apt install -y python3-tk
+
+COPY . /python
+
+CMD [ "python", "main.py" ]
+#docker run -i -t --net=host -e DISPLAY

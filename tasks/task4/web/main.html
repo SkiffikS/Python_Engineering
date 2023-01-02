@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>Теплотехнічні характеристики будівлі</title>
+    
+        <link rel = "icon" type = "image/png" href = "/faveicon.png">
+        <link rel = "stylesheet" href = "/style.css">
+    </head>
+<body>
+    <h1 class="title">Моделювання графіка електричного навантаження (Вкладка 4)</h1>
+    <div class="profiles"><button onclick="toggleText()"> Профілі </button></div>
+    <div class="profiles-block" id="profiles">
+        <h2 class="subtitle">Профілі споживачів:</h2>
+        <div class="user-buttons">
+            <div><button class="source source-1" onclick="get_info_Bogdan()">Bogdan</button></div>
+            <div><button class="source source-2" onclick="get_info_Maxim()">Maxim</button></div>
+            <div><button class="source source-3" onclick="get_info_Oleg()">Oleg</button></div>
+            <div><button class="source source-4" onclick="get_info_Pavel()">Pavel</button></div>
+            <div><button class="source source-5" onclick="get_info_Vlad()">Vlad</button></div>
+        </div>
+        <div class="users-blocks">
+            <div class="target target-1">
+                <div class="blocks">
+                    <div class="left">
+                        <div class="image"><img src="images/user.png" alt=""></div>
+                        <h3 class="user-name">Bogdan</h3>
+                        <div class="plot">
+                            <h4 class="title-graph">Діаграмa використання:</h4>
+                            <div class="diagram"><img src="images/Bogdan_plot.png" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="text" id="res-Bogdan"></div>
+                        <div class="replace-info">
+                            <h4 class="replace-title">Якщо бажаєте замінити данні введіть: </h4>
+                            <div class = "input-block">
+                                <input class = "input" type = "text" id = "input-1" required>
+                                <label for = "">День (1-7)</label>
+                            </div>
+                            <div class = "input-block">
+                                <input class = "input" type = "text" id = "input-2" required>
+                                <label for = "">Прилади</label>
+                            </div>
+                            <div class = "input-block">
+                                <input class = "input" type = "text" id = "input-3" required>
+                                <label for = "">Час</label>
+                            </div>
+                            <div class="replace-buttom"><button class="replace" id="replace" onclick="replace_info_Bogdan()">Замінити дані</button></div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            <div class="target target-2">
+                <div class="blocks">
+                    <div class="left">
+                        <div class="image"><img src="images/user.png" alt=""></div>
+                        <h3 class="user-name">Maxim</h3>
+                        <div class="plot">
+                            <h4 class="title-graph">Діаграмa використання:</h4>
+                            <div class="diagram"><img src="images/Maxim_plot.png" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="text" id="res-Maxim"></div>
+                        <div class="replace-info">
+                            <h4 class="replace-title">Якщо бажаєте замінити данні введіть: </h4>
+                            <div class = "input-block">
+                                <input class = "input" type = "text" id = "input-1" required>
+                                <label for = "">День (1-7)</label>
+                            </div>
+                            <div class = "input-block">
+                                <input class = "input" type = "text" id = "input-2" required>
+                                <label for = "">Прилади</label>
+                            </div>
+                            <div class = "input-block">
+                                <input class = "input" type = "text" id = "input-3" required>
+                                <label for = "">Час</label>
+                            </div>
+                            <div class="replace-buttom"><button class="replace" id="replace" onclick="replace_info_Maxim()">Замінити дані</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="target target-3">
+                <div class="blocks">
+                    <div class="left">
+                        <div class="image"><img src="images/user.png" alt=""></div>
+                        <h3 class="user-name">Oleg</h3>
+                        <div class="plot">
+                            <h4 class="title-graph">Діаграмa використання:</h4>
+                            <div class="diagram"><img src="images/Oleg_plot.png" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="text" id="res-Oleg"></div>
+                        <div class="replace-info">
+                            <h4 class="replace-title">Якщо бажаєте замінити данні введіть: </h4>
+                            <div class = "input-block">
+                                <input class = "input" type = "text" id = "input-1" required>
+                                <label for = "">День (1-7)</label>
+                            </div>
+                            <div class = "input-block">
+                                <input class = "input" type = "text" id = "input-2" required>
+                                <label for = "">Прилади</label>
+                            </div>
+                            <div class = "input-block">
+                                <input class = "input" type = "text" id = "input-3" required>
+                                <label for = "">Час</label>
+                            </div>
+                            <div class="replace-buttom"><button class="replace" id="replace" onclick="replace_info_Oleg()">Замінити дані</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="target target-4">
+                <div class="blocks">
+                    <div class="left">
+                        <div class="image"><img src="images/user.png" alt=""></div>
+                        <h3 class="user-name">Pavel</h3>
+                        <div class="plot">
+                            <h4 class="title-graph">Діаграмa використання:</h4>
+                            <div class="diagram"><img src="images/Pavel_plot.png" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="text" id="res-Pavel"></div>
+                        <div class="replace-info">
+                            <h4 class="replace-title">Якщо бажаєте замінити данні введіть: </h4>
+                            <div class = "input-block">
+                                <input class = "input" type = "text" id = "input-1" required>
+                                <label for = "">День (1-7)</label>
+                            </div>
+                            <div class = "input-block">
+                                <input class = "input" type = "text" id = "input-2" required>
+                                <label for = "">Прилади</label>
+                            </div>
+                            <div class = "input-block">
+                                <input class = "input" type = "text" id = "input-3" required>
+                                <label for = "">Час</label>
+                            </div>
+                            <div class="replace-buttom"><button class="replace" id="replace" onclick="replace_info_Pavel()">Замінити дані</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="target target-5">
+                <div class="blocks">
+                    <div class="left">
+                        <div class="image"><img src="images/user.png" alt=""></div>
+                        <h3 class="user-name">Vlad</h3>
+                        <div class="plot">
+                            <h4 class="title-graph">Діаграмa використання:</h4>
+                            <div class="diagram"><img src="images/Vlad_plot.png" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="text" id="res-Vlad"></div>
+                        <div class="replace-info">
+                            <h4 class="replace-title">Якщо бажаєте замінити данні введіть: </h4>
+                            <div class = "input-block">
+                                <input class = "input" type = "text" id = "input-1" required>
+                                <label for = "">День (1-7)</label>
+                            </div>
+                            <div class = "input-block">
+                                <input class = "input" type = "text" id = "input-2" required>
+                                <label for = "">Прилади</label>
+                            </div>
+                            <div class = "input-block">
+                                <input class = "input" type = "text" id = "input-3" required>
+                                <label for = "">Час</label>
+                            </div>
+                            <div class="replace-buttom"><button class="replace" id="replace" onclick="replace_info_Vlad()">Замінити дані</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2 class="all-info-subtitle">Загальна інформація</h2>
+    <div class="profiles"><button onclick="get_all_info()">Показати загальну інформацію</button></div>
+    <div class="block-all-info" id="block-all-info">
+        <div class="text-all-info" id="text-all-info"></div>
+        <h3 class="plot-all-info">Спільна діаграмa електричного наватаження:</h3>
+        <div class="all-info-plot">
+            <img src="images/all_plot.png" alt="">
+        </div>
+    </div>
+    <script src = "eel.js"></script>
+    <script src = "script.js"></script>
+</body>
+</html>
